@@ -9,10 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.5.1",
     "@nextui-org/react": "^2.4.8",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
+    "@react-pdf-viewer/search": "^3.12.0",
     "antd": "^5.21.2",
     "framer-motion": "^11.9.0",
     "next": "14.2.14",
+    "raw-loader": "^4.0.2",
     "react": "^18",
     "react-dom": "^18"
   },

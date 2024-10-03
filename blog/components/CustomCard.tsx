@@ -1,12 +1,21 @@
-import {Card} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
 
-export const CustomCard = () => (
-  <Card className="w-full" radius="sm">
-    <div className="h-24 rounded-lg bg-default-300"></div>
-    <div className="space-y-3">
-      <div className="h-3 w-3/5 rounded-lg bg-default-200"></div>
-      <div className="h-3 w-4/5 rounded-lg bg-default-200"></div>
-      <div className="h-3 w-2/5 rounded-lg bg-default-300"></div>
-    </div>
-  </Card>
-);
+export default function App() {
+  return (
+    <Card className="py-4">
+      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+        <span className="text-xl font-bold font-mono">Daily Mix</span>
+        <small className="text-default-500">12 Tracks</small>
+        <h4 className="text-large">Frontend Radio</h4>
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <Image
+          alt="Card background"
+          className="object-cover rounded-xl"
+          src="https://nextui.org/images/hero-card-complete.jpeg"
+          width={270}
+        />
+      </CardBody>
+    </Card>
+  );
+}

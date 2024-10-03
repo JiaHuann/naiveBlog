@@ -1,0 +1,39 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('/overlay.jpg'); /* 替换为你的壁纸路径 */
+    background-size: cover;
+    background-position: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.8s ease-in-out;
+    transform: translateY(-100%);  /* 初始隐藏在屏幕上方 */
+  }
+  
+  .sloganContainer {
+    text-align: center;
+    color: white;
+  }
+  
+  .slogan {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .exploreButton {
+    margin-top: 20px;
+  }
+  
+  .overlay.show {
+    transform: translateY(0);  /* 页面加载后，慢慢滑下来 */
+  }
+  
+  .overlay.hide {
+    transform: translateY(-100%);  /* 用户点击或滑动后，慢慢滑上去 */
+  }
+  

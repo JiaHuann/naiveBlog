@@ -1,7 +1,11 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input} from "@nextui-org/react";
-
+'use client'
+import { usePathname } from 'next/navigation'; // 使用 usePathname 替代 useRouter
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Input, Popover, PopoverTrigger, PopoverContent, Button, Snippet } from "@nextui-org/react";
+import { FileSearchOutlined, GithubFilled, GithubOutlined, MailOutlined, QqOutlined, SearchOutlined, TwitterOutlined } from '@ant-design/icons';
 
 export default function MyNavBar() {
+  const pathname = usePathname(); // 获取当前路径
+
   return (
     <Navbar isBordered
     classNames={{
@@ -21,32 +25,45 @@ export default function MyNavBar() {
       ],
     }}>
       <NavbarBrand>
-        {/* <AcmeLogo /> */}
         <p className="font-bold text-inherit font-mono">LiuJiahuan's Blog</p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-8" justify="center">
-        <NavbarItem isActive>
-          <Link className="font-mono" href="#" aria-current="page">
+        <NavbarItem isActive={pathname === '/'}>
+          <Link 
+            className={`font-mono ${pathname === '/' ? 'text-primary' : 'text-foreground'}`} 
+            href="/" 
+            aria-current={pathname === '/' ? 'page' : undefined}
+          >
             HomePage
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="font-mono" color="foreground" href="#">
+        <NavbarItem isActive={pathname === '/blog'}>
+          <Link 
+            className={`font-mono ${pathname === '/blog' ? 'text-primary' : 'text-foreground'}`} 
+            href="/blog"
+          >
             Blogs
           </Link>
         </NavbarItem>
-        <NavbarItem >
-          <Link className="font-mono" href="#" color="foreground">
+        <NavbarItem isActive={pathname === '/aboutme'}>
+          <Link 
+            className={`font-mono ${pathname === '/aboutme' ? 'text-primary' : 'text-foreground'}`} 
+            href="/aboutme"
+          >
             About Me
           </Link>
         </NavbarItem>
-        <NavbarItem>
-          <Link className="font-mono" color="foreground" href="#">
+        <NavbarItem isActive={pathname === '/misc'}>
+          <Link 
+            className={`font-mono ${pathname === '/misc' ? 'text-primary' : 'text-foreground'}`} 
+            href="/misc"
+          >
             MISC
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent as="div" className="items-center" justify="end">
+      <NavbarContent as="div" className="ml-2 sm:ml-4 md:ml-8 lg:ml-16 items-center">
+        <SearchOutlined></SearchOutlined>
         <Input
           classNames={{
             base: "max-w-full sm:max-w-[10rem] h-10 font-mono",
@@ -56,37 +73,42 @@ export default function MyNavBar() {
           }}
           placeholder="search sth?"
           size="sm"
-          // startContent={<SearchIcon size={18} />}
           type="search"
         />
-        {/* <Dropdown placement="bottom-end">
-          <DropdownTrigger>
-            <Avatar
-              isBordered
-              as="button"
-              className="transition-transform"
-              color="secondary"
-              name="Jason Hughes"
-              size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
-            />
-          </DropdownTrigger>
-          <DropdownMenu aria-label="Profile Actions" variant="flat">
-            <DropdownItem key="profile" className="h-14 gap-2">
-              <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
-            </DropdownItem>
-            <DropdownItem key="settings">My Settings</DropdownItem>
-            <DropdownItem key="team_settings">Team Settings</DropdownItem>
-            <DropdownItem key="analytics">Analytics</DropdownItem>
-            <DropdownItem key="system">System</DropdownItem>
-            <DropdownItem key="configurations">Configurations</DropdownItem>
-            <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
-            <DropdownItem key="logout" color="danger">
-              Log Out
-            </DropdownItem>
-          </DropdownMenu>
-        </Dropdown> */}
+      </NavbarContent>
+      {/* 社交平台引流 */}
+      <NavbarContent justify='end'>
+        <a target="_blank" href='https://github.com/JiaHuann'><GithubOutlined></GithubOutlined></a>
+        
+        <Popover placement="right">
+          <PopoverTrigger>
+            <MailOutlined></MailOutlined>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="px-1 py-2 font-mono">
+              <div className="text-small font-bold">Contact Me With E-Mail</div>
+              <div className="text-tiny"><Snippet symbol="" variant="bordered">cheayuki13@gmail.com</Snippet></div>
+            </div>
+          </PopoverContent>
+        </Popover>
+        <Popover placement="right">
+          <PopoverTrigger>
+            <QqOutlined></QqOutlined>
+          </PopoverTrigger>
+          <PopoverContent>
+            <div className="px-1 py-2 font-mono">
+              <div className="text-small font-bold">Contact Me With QQ</div>
+              <div className="text-tiny">
+                <Snippet symbol="" variant="bordered">1395622672</Snippet>
+                
+              </div>
+              Mainly used in China Mainland
+            </div>
+          </PopoverContent>
+        </Popover>
+        <a target='_blank' href='https://x.com/CheAyuki13'><TwitterOutlined></TwitterOutlined></a>
+            
+         
       </NavbarContent>
     </Navbar>
   );
