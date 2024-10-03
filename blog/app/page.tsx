@@ -1,6 +1,6 @@
 import MyCalender from "@/components/Calender";
 import MySpacer from "@/components/spacer";
-import TechStack from "@/info/TechStack";
+import TechStack from "@/components/info/TechStack";
 import { Col, Row } from "antd";
 import MyOverlay from "@/components/Overlay"; // 引入遮罩组件
 

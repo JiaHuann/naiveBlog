@@ -1,6 +1,5 @@
 'use client'
 import { Col, Row } from "antd";
-import MyPdfViewer from "./PDF";
 import MyPDF from "./PDF";
 
 export default function AboutMePage(){

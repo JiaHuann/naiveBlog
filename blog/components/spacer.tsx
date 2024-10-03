@@ -7,9 +7,6 @@ export default function MySpacer() {
     <div className="space-y-5">
       <CustomCard />
       <Spacer />
-      <CustomCard />
-      <Spacer />
-      <CustomCard />
     </div>
   );
 }
