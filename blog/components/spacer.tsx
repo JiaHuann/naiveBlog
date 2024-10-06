@@ -14,7 +14,7 @@ const BlogInfo = [
     href: "allContent/浅析KPROBE_OVEERRIDE在错误注入中的使用.html",
     title: "浅析KPROBE_OVEERRIDE在错误注入中的使用",
     subContent: "licensed under CC-BY-NC-SA 仅作分享，已在公司申请专利。",
-    tags: "标签 3, 标签 4",
+    tags: "#eBPF #混沌工程 #Linux Kernel",
   }
   // 添加更多博客条目
 ];
