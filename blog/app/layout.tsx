@@ -18,7 +18,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MyNavBar/>
-        {children}
+        <div style={{ backgroundImage: "url('/background.jpg')",backgroundRepeat: "no-repeat",backgroundSize: "cover" }}>
+          {children}
+        </div>
+        
         <Analytics />
       </body>
     </html>

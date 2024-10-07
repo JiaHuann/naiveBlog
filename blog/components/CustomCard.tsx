@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function BlogCardShown({href,title,subContent,tags,imageUrl}:any) {
   return (
-    <Card className="py-4">
+    <Card className="py-4 bg-opacity-80">
       <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
         <span className="text-xl font-bold font-mono">
           <Link target='_blank' href={href} >

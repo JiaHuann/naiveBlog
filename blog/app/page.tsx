@@ -12,16 +12,13 @@ export default function Home() {
       
       <Row className="flex flex-wrap">
         <Col xs={24} sm={12} md={6}>
-          <p className="w-full bg-yellow-500">left space</p>
           <HomePageLeft/>
         </Col>
         <Col xs={24} sm={12} md={12}>
-          <p className="w-full bg-blue-500">col-12 col-offset-6</p>
           <MySpacer/>
         </Col>
         <Col xs={24} sm={12} md={6}>
-          <p className="w-full bg-green-500">right space</p>
-          <div className="flex justify-center mt-10"><MyCalender /></div>
+          <div className="flex justify-center mt-5"><MyCalender /></div>
           <div className="flex justify-center mt-10"><TechStack /></div>
         </Col>
       </Row>

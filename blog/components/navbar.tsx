@@ -22,7 +22,9 @@ export default function MyNavBar() {
         "data-[active=true]:after:h-[2px]",
         "data-[active=true]:after:rounded-[2px]",
         "data-[active=true]:after:bg-primary",
+        "bg-color-blue"
       ],
+      
     }}>
       <NavbarBrand>
         <p className="font-bold text-inherit font-mono">LiuJiahuan's Blog</p>
