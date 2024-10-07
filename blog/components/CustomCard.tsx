@@ -10,8 +10,8 @@ export default function BlogCardShown({href,title,subContent,tags,imageUrl}:any)
           {title}
           </Link>
         </span>
-        <small className="text-default-500">{subContent}</small>
-        <h4 className="text-large">{tags}</h4>
+        <small className="text-default-800">{subContent}</small>
+        <small className="text-default-500">{tags}</small>
       </CardHeader>
       
       <CardBody className="overflow-visible py-2">
