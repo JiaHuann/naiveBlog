@@ -15,6 +15,12 @@ const BlogInfo = [
     title: "浅析KPROBE_OVEERRIDE在错误注入中的使用",
     subContent: "licensed under CC-BY-NC-SA 仅作分享，已在公司申请专利。",
     tags: "#eBPF #混沌工程 #Linux Kernel",
+  },
+  {
+    href: "allContent/'TTY(UART) Linux Kernel子系统分析.html'",
+    title: "TTY(UART) Linux Kernel子系统分析",
+    subContent: "Linux TTY UART子系统分析及排障记录",
+    tags: "#eBPF #Linux Kernel",
   }
   // 添加更多博客条目
 ];
